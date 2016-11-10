@@ -8,9 +8,13 @@
 }
 
 .off-canvas {
-	position: fixed;
+	position: absolute;
 	top: 62px;
 	transform: translateX(-100%);
 	height: calc(100% - 62px);
 	transition: transform .3s ease-in-out;
+}
+
+.off-canvas.open {
+	transform: translateX(0);
 }

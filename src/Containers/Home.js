@@ -28,7 +28,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Navigation />
+                <Navigation title="Home" />
                 <div className="section">
                     <div className="container">
                         {this.state.collection.map((card, index) => {

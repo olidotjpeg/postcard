@@ -1,10 +1,18 @@
-import React, { Component } from 'react';
+import React, { 
+	Component,
+	PropTypes
+} from 'react';
 import { Link } from 'react-router';
+import classNames from 'classnames';
 
 // CSS
 import './navigation.css';
 
 class Navigation extends Component {
+
+	static PropTypes = {
+		title: PropTypes.string
+	}
 
     constructor() {
         super();
@@ -14,20 +22,29 @@ class Navigation extends Component {
         }
     }
 
-	superFunction() {
-		let something = this.state.offCanvasState = !this.state.offCanvasState;
-
-		console.log(something);
+	offCanvasHandler() {
+		if (this.state.offCanvasState) {
+			this.setState({
+				offCanvasState: false
+			})
+		} else {
+			this.setState({
+				offCanvasState: true
+			})
+		}
 	}
 
     render() {
 
+    	let menuStateClass = this.state.offCanvasState ? 'open' : '';
+
         return (
         	<div className="container">
 	        	<nav className="main-menu">
-	        		<button onClick={() => this.superFunction()}>A</button>
+	        		<button onClick={() => this.offCanvasHandler()}>A</button>
+	        		<h1>{this.props.title}</h1>
 	        	</nav>
-	        	<div className="off-canvas">
+	        	<div className={classNames(menuStateClass, 'off-canvas')}>
 	        		<ul>
 	        			<li>
 	        				<Link to={'/create'}>Create</Link>

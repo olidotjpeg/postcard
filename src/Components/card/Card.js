@@ -2,11 +2,17 @@ import React, {
     Component,
     PropTypes
 } from 'react';
+// CSS
+import './card.css';
 
 class Card extends Component {
     static propTypes = {
-        name: PropTypes.string
+        data: PropTypes.object
     };
+
+    handleClick(id) {
+        console.log(id);
+    }
 
     render() {
         return (
