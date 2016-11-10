@@ -1,0 +1,16 @@
+.container {
+	position: relative;
+}
+
+.main-menu {
+	background: #7165C1;
+	padding: 20px;
+}
+
+.off-canvas {
+	position: fixed;
+	top: 62px;
+	transform: translateX(-100%);
+	height: calc(100% - 62px);
+	transition: transform .3s ease-in-out;
+}

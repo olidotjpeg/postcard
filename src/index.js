@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { 
-	Router, 
-	Route, 
-	Link, 
-	browserHistory 
+import {
+    Router,
+    Route,
+    browserHistory
 } from 'react-router';
 import Home from './Containers/Home';
 import NoMatch from './Containers/noMatch';

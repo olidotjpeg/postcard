@@ -3,6 +3,7 @@ import { collection } from '../services/cards';
 import './App.css';
 
 // Components
+import Navigation from '../Components/navigation/navigation'
 import Card from '../Components/card/Card';
 
 class Home extends Component {
@@ -26,14 +27,16 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="section">
-                <nav></nav>
-                <div className="container">
-                    {this.state.collection.map((card, index) => {
-                        return (
-                            <Card data={card} key={index} />
-                        );
-                    })}
+            <div>
+                <Navigation />
+                <div className="section">
+                    <div className="container">
+                        {this.state.collection.map((card, index) => {
+                            return (
+                                <Card data={card} key={index} />
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         );
