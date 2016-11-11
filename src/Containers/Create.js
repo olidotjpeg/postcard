@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { collection } from '../services/cards';
 
 // Components
-import Navigation from '../Components/navigation/navigation'
-import Card from '../Components/card/Card';
+import Navigation from '../Components/navigation/navigation';
+import PostCard from '../Components/postcard/PostCard';
 
 class Create extends Component {
 
@@ -24,11 +24,8 @@ class Create extends Component {
         })
     }
 
-    createHandler(card, index) {
-        console.log(card)
-    }
-
     render() {
+
         return (
             <div>
                 <Navigation title="Create" />
@@ -40,9 +37,7 @@ class Create extends Component {
                             <ul>
                                 {this.state.collection.map((card, index) => {
                                     return (
-                                        <li key={index} onClick={() => this.createHandler(card, index)}>
-                                            <Card data={card} />
-                                        </li>
+                                        <PostCard data={card} key={index} />
                                     );
                                 })}
                             </ul>
