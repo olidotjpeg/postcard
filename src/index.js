@@ -15,7 +15,7 @@ import './index.css';
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={Home} />
-    <Route path="/create" component={Create} />
+    <Route path="/create/:id" component={Create} />
     <Route path="/user" component={User} />
     <Route path="/login" component={Login} />
     <Route path="*" component={NoMatch} />
