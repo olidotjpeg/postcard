@@ -2,7 +2,7 @@
   "name": "postcard",
   "version": "0.0.1",
   "private": true,
-  "homepage": "http://stenkilde.link/postcard",
+  "homepage": "http://stenkilde.link/",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",

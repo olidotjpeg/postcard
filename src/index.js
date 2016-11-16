@@ -15,7 +15,6 @@ import './index.css';
 let auth = localStorage.getItem('auth');
 
 function requireAuth(nextState, replace) {
-    console.log(auth);
     if (!auth) {
         replace({
             pathname: '/login',

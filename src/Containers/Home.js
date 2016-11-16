@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { collection } from '../services/cards';
 import { Link } from 'react-router';
-import app from '../css/app.css';
 
 // Components
 import Navigation from '../Components/navigation/navigation'
