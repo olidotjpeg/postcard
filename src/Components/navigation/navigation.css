@@ -1,20 +1,14 @@
-.container {
-	position: relative;
+.main-navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #FFC52C;
+	height: 70px;
+	padding: 0 25px;
+	font-size: 20px;
+	color: #fff;
 }
 
-.main-menu {
-	background: #7165C1;
-	padding: 20px;
-}
-
-.off-canvas {
-	position: absolute;
-	top: 62px;
-	transform: translateX(-100%);
-	height: calc(100% - 62px);
-	transition: transform .3s ease-in-out;
-}
-
-.off-canvas.open {
-	transform: translateX(0);
+.nav-link {
+	color: #fff;
 }

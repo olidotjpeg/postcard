@@ -3,6 +3,8 @@ import { collection } from '../services/cards';
 
 // components
 import PostCardBuilder from '../Components/postcard/PostCardBuilder';
+// 3rd Party
+import Carousel from 'nuka-carousel';
 
 class Build extends Component {
 
@@ -24,14 +26,17 @@ class Build extends Component {
     }
 
     render() {
+
         return (
-            <div>
-            	{this.state.collection.map((card, index) => {
-                    return (
-                    	<PostCardBuilder data={card} key={index} />
-                    );
-                })}
-            </div>
+            <section>
+                <Carousel>
+                	{this.state.collection.map((card, index) => {
+                        return (
+                            <PostCardBuilder data={card} key={index} />
+                        );
+                    })}
+                </Carousel>
+            </section>
         );
     }
 }
