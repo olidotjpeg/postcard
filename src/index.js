@@ -12,11 +12,23 @@ import User from './Containers/User';
 import Login from './Containers/Login';
 import './index.css';
 
+let auth = localStorage.getItem('auth');
+
+function requireAuth(nextState, replace) {
+    console.log(auth);
+    if (!auth) {
+        replace({
+            pathname: '/login',
+            state: { nextPathname: nextState.location.pathname }
+        })
+    }
+}
+
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route path="/" component={Home} />
-    <Route path="/create/:id" component={Create} />
-    <Route path="/user" component={User} />
+    <Route path="/" component={Home} onEnter={requireAuth} />
+    <Route path="/create/:id" component={Create} onEnter={requireAuth} />
+    <Route path="/user" component={User} onEnter={requireAuth} />
     <Route path="/login" component={Login} />
     <Route path="*" component={NoMatch} />
   </Router>

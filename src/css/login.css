@@ -1,0 +1,54 @@
+.login {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+
+	height: 100vh;
+	background: linear-gradient(to bottom, #fbda61 0%,#ffc52c 100%);
+}
+
+.loginLogo {
+	width: 50%;
+}
+
+.loginForm {
+	display: flex;
+	flex-flow: column;
+}
+
+.input {
+	margin: 5px 0;
+	border: none;
+	height: 40px;
+	padding: 5px 10px;
+	color: #5C5C5C;
+	background: #F5DF98;
+	font-size: 14px;
+}
+
+.loginButton {
+	margin: 5px 0;
+	border: none;
+	height: 40px;
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 14px;
+	background: #7ED321;
+}
+
+::-webkit-input-placeholder {
+   color: #cacaca;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #cacaca;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #cacaca;  
+}
+
+:-ms-input-placeholder {  
+   color: #cacaca;  
+}

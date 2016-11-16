@@ -121,7 +121,7 @@ module.exports = {
       // },
       {
         test: /\.css$/, 
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -166,10 +166,6 @@ module.exports = {
     ];
   },
   plugins: [
-    new ExtractTextPlugin('../css/[name].css', {
-      allChunks: true,
-      ignoreOrder: true
-    }),
     // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In development, this will be an empty string.

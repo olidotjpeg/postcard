@@ -3,7 +3,7 @@ import React, {
     PropTypes
 } from 'react';
 // CSS
-import './card.css';
+import card from './card.css';
 
 class Card extends Component {
     static propTypes = {
@@ -16,19 +16,15 @@ class Card extends Component {
 
     render() {
         return (
-            <div className="card is-fullwidth">
-                <div className="card-image">
+            <div className={card.card}>
+                <div className={card.cardImage}>
                     <figure className="image is-4by3">
                         <img src={this.props.data.url} alt="" />
                     </figure>
                 </div>
-                <div className="card-content">
-                    <div className="media">
-                        <div className="media-content">
-                            <p className="title is-5">{this.props.data.title}</p>
-                            <p className="subtitle is-6">@{this.props.data.author}</p>
-                        </div>
-                    </div>
+                <div className={card.cardContent}>
+                    <p>{this.props.data.title}</p>
+                    <p>@{this.props.data.author}</p>
                 </div>
             </div>
         );

@@ -1,0 +1,33 @@
+.userBlock {
+	height: calc(50vh - 70px);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to top, #fbda61 0%,#ffc52c 100%);
+}
+
+.photographBlock {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+	color: #ADACAC;
+}
+
+.icon {
+	font-size: 100px;
+}
+
+.userButtonGroup {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.userAvatar {
+	width: 111px;
+	height: 111px;
+	border-radius: 50%;
+}

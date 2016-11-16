@@ -1,4 +1,4 @@
-.main-navigation {
+.mainNavigation {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -9,6 +9,6 @@
 	color: #fff;
 }
 
-.nav-link {
+.navLink {
 	color: #fff;
 }

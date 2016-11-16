@@ -5,7 +5,7 @@ import React, {
 import { Link } from 'react-router';
 
 // CSS
-import './navigation.css';
+import nav from './navigation.css';
 
 class Navigation extends Component {
 
@@ -15,12 +15,12 @@ class Navigation extends Component {
 
     render() {
         return (
-        	<nav className="main-navigation">
-        		<Link to={'/user'} className="nav-link">
+        	<nav className={nav.mainNavigation}>
+        		<Link to={'/user'} className={nav.navLink}>
         			<i className="fa fa-user" aria-hidden="true"></i>
     			</Link>
         		<h1>{this.props.title}</h1>
-        		<Link to={'/'} className="nav-link">Logo</Link>
+        		<Link to={'/'} className={nav.navLink}>Logo</Link>
         	</nav>
         );
     }

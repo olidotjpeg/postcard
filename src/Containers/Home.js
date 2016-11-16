@@ -30,11 +30,11 @@ class Home extends Component {
         return (
             <div>
                 <Navigation title="Home" />
-                <div className={app.section}>
-                    <div className={app.container}>
+                <div className="section">
+                    <div className="container">
                         {this.state.collection.map((card, index) => {
                             return (
-                                <Link key={index} to={{ pathname: '/create/{card.id}'}}>
+                                <Link key={index} to={{ pathname: `/create/${card.id}`}}>
                                     <Card data={card} />
                                 </Link>
                             );
