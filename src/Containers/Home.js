@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { collection } from '../services/cards';
-import './App.css';
+import { Link } from 'react-router';
+import app from '../css/app.css';
 
 // Components
 import Navigation from '../Components/navigation/navigation'
@@ -29,11 +30,13 @@ class Home extends Component {
         return (
             <div>
                 <Navigation title="Home" />
-                <div className="section">
-                    <div className="container">
+                <div className={app.section}>
+                    <div className={app.container}>
                         {this.state.collection.map((card, index) => {
                             return (
-                                <Card data={card} key={index} />
+                                <Link key={index} to={{ pathname: '/create/{card.id}'}}>
+                                    <Card data={card} />
+                                </Link>
                             );
                         })}
                     </div>

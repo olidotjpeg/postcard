@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// css
-import './App.css';
 
 class Login extends Component {
 

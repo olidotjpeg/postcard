@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 // components
 import Navigation from '../Components/navigation/navigation';
-// css
-import './App.css';
 
 class User extends Component {
 
