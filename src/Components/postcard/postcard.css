@@ -1,5 +1,11 @@
-.postcard {
+.postcard {}
 
+.container {
+	height: calc(100vh - 70px);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .selected {

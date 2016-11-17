@@ -5,7 +5,7 @@ import React, {
 import classNames from 'classnames';
 
 // CSS
-import './postcard.css';
+import postcard from './postcard.css';
 
 
 class PostCardBuilder extends Component {
@@ -29,22 +29,25 @@ class PostCardBuilder extends Component {
 
     render() {
 
-    	let flippedClass = this.state.flipped ? 'flipped' : '';
+    	let flippedClass = this.state.flipped ? postcard.flipped : '';
 
         return (
-        	<div className={classNames(flippedClass, 'postcard')}>
-        		<div className="front" onClick={() => this.flipCard()}>
-	        		<img src={this.props.data.url} alt={this.props.data.title} />
+        	<div className={postcard.container}>
+	        	<div className={classNames(flippedClass, postcard.postcard)}>
+	        		<div className={postcard.front}>
+		        		<img src={this.props.data.url} alt={this.props.data.title} />
+		        	</div>
+		        	<div className={postcard.back}>
+		        		<form className={postcard.form}>
+		        			<input type="text" />
+		        		</form>
+		        		<div className={postcard.information}>
+			        		<p>{this.props.data.author}</p>
+			        		<p>{this.props.data.title}</p>
+		        		</div>
+		        	</div>
 	        	</div>
-	        	<div className="back">
-	        		<form className="form">
-	        			<input type="text" />
-	        		</form>
-	        		<div className="information">
-		        		<p>{this.props.data.author}</p>
-		        		<p>{this.props.data.title}</p>
-	        		</div>
-	        	</div>
+	        	<button onClick={() => this.flipCard()}>Flip me</button>
         	</div>
         );
     }

@@ -7,7 +7,7 @@ var request = require('./request.js');
  */
 function collection() {
 
-    return request.get('./post/postcards.json')
+    return request.get('../post/postcards.json')
         .then(function(response) {
             return {
                 collection: response
