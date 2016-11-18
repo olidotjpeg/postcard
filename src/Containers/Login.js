@@ -8,6 +8,7 @@ class Login extends Component {
     submitForm() {
         localStorage.setItem('auth', 'vanilla');
         browserHistory.push('/');
+        event.preventDefault();
     }
 
     render() {
