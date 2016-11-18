@@ -8,18 +8,26 @@
 	align-items: center;
 }
 
+.section {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 100%;
+}
+
 .selected {
 	border: blue 5px solid;
 }
 
-.postcard {
-}
+.postcard {}
 
 .postcard.flipped {
 	transform: rotateY(180deg);
 }
 
 .postcard {
+	width: 90%;
 	transition: 0.6s;
 	transform-style: preserve-3d;
 	position: relative;
@@ -42,16 +50,73 @@
 }
 
 .back {
+	display: flex;
 	transform: rotateY(180deg);
 	right: 0;
+	border: 1px solid;
 }
 
 .form {
+	display: flex;
+	width: 70%;
+	height: 100%;
+}
 
+.textarea {
+	width: 100%;
+}
+
+.button {
+	width: 100%;
+	border: none;
+	padding: 15px 0;
+	background: #85B9F3;
+	color: #fff;
+}
+
+.buttonGroup {
+	width: 100%;
+	display: flex;
+}
+
+.input {
+	width: 100%;
+	border: none;
+	background: none;
+	border-bottom: 1px solid #000;
+	margin: 10px 0;
+}
+
+.meta {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.large {
+	font-size: 24px;
+}
+
+.logo {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.core {
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	text-align: left;
 }
 
 .information {
-	position: absolute;
-    right: 0;
-    bottom: 0;
+	position: relative;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 100%;
+	padding: 10px;
 }

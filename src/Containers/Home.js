@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { collection } from '../services/cards';
 import { Link } from 'react-router';
+import { connect } from "react-redux";
 
 // Components
 import Navigation from '../Components/navigation/navigation'
 import Card from '../Components/card/Card';
+
+const mapState = state => ({
+    data: state.test.data
+});
 
 class Home extends Component {
 
@@ -45,4 +50,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default connect(mapState)(Home);

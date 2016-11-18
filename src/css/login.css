@@ -25,6 +25,8 @@
 	color: #5C5C5C;
 	background: #F5DF98;
 	font-size: 14px;
+	
+	-webkit-appearance: none;
 }
 
 .loginButton {
@@ -35,6 +37,8 @@
 	color: #fff;
 	font-size: 14px;
 	background: #7ED321;
+	
+	-webkit-appearance: none;
 }
 
 ::-webkit-input-placeholder {
