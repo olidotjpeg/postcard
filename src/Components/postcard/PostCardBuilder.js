@@ -19,7 +19,9 @@ class PostCardBuilder extends Component {
 
 		this.state = {
 			flipped: true,
-			value: ''
+			recipient: '',
+			address: '',
+			country: ''
 		};
 	}
 
@@ -35,21 +37,32 @@ class PostCardBuilder extends Component {
 		});
 	}
 
-	pogChamp() {
-		console.log('elegiggle')
-		event.preventDefault();
+	handleSubmit(e) {
+		let formData = {
+			recipient: this.state.recipient,
+			address: this.state.address,
+			country: this.state.country
+		}
+
+		console.log(formData);
 	}
 
-	handleRecipient(event) {
-		console.log(event);
+	handleRecipient(e) {
+		this.setState({ 
+			recipient: e.target.value
+		});
 	}
 
-	handleAddress() {
-
+	handleAddress(e) {
+		this.setState({ 
+			address: e.target.value
+		});
 	}
 
-	handleCountry() {
-
+	handleCountry(e) {
+		this.setState({ 
+			country: e.target.value
+		});
 	}
 
     render() {
@@ -64,22 +77,22 @@ class PostCardBuilder extends Component {
 			        		<div className={postcard.front}>
 				        		<img src={this.props.data.url} alt={this.props.data.title} />
 				        	</div>
-				        	<form onSubmit={() => this.pogChamp()} className={postcard.back}>
+				        	<div className={postcard.back}>
 				        		<div className={postcard.form}>
 				        			<textarea className={postcard.textarea}></textarea>
 				        		</div>
 				        		<div className={postcard.information}>
 				        			<div className={postcard.logo}>logo</div>
-				        			<input type="text" className={postcard.input} value={this.state.value} onChange={() => this.handleRecipient(event)} />
-				        			<input type="text" className={postcard.input} onChange={() => this.handleAddress(this)} />
-				        			<input type="text" className={postcard.input} onChange={() => this.handleCountry(this)} />
+				        			<input type="text" className={postcard.input} value={this.state.recipient || ''} onChange={this.handleRecipient.bind(this)} />
+				        			<input type="text" className={postcard.input} value={this.state.address || ''} onChange={this.handleAddress.bind(this)} />
+				        			<input type="text" className={postcard.input} value={this.state.country || ''} onChange={this.handleCountry.bind(this)} />
 					        		<div className={postcard.core}>
 						        		<p>{this.props.data.author}</p>
 						        		<p>{this.props.data.title}</p>
 					        		</div>
-					        		<input type="submit" />
+					        		<button onClick={(e) => this.handleSubmit()}>Submit</button>
 				        		</div>
-				        	</form>
+				        	</div>
 			        	</div>
 		        	</Hammer>
 	        	</div>
