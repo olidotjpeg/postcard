@@ -11,6 +11,7 @@ import NoMatch from './Containers/noMatch';
 import Create from './Containers/Create';
 import User from './Containers/User';
 import Login from './Containers/Login';
+import Upload from './Containers/Upload';
 import './index.css';
 
 import configureStore from "./store/configureStore";
@@ -34,6 +35,7 @@ ReactDOM.render((
             <Route path="/create/:id" component={Create} onEnter={requireAuth} />
             <Route path="/user" component={User} onEnter={requireAuth} />
             <Route path="/login" component={Login} />
+            <Route path="/upload" component={Upload} />
             <Route path="*" component={NoMatch} />
         </Router>
     </Provider>

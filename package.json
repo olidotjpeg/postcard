@@ -61,6 +61,7 @@
     "react": "^15.3.2",
     "react-css-modules": "^4.0.3",
     "react-dom": "^15.3.2",
+    "react-dropzone": "^3.7.3",
     "react-hammerjs": "^0.5.0",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
