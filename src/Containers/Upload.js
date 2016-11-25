@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dropzone from 'react-dropzone';
+import { upload } from '../services/upload';
 
 class Upload extends Component {
 
@@ -7,17 +7,29 @@ class Upload extends Component {
 		super();
 
 		this.state = {
-			files: [],
-			test: ''
-		};
+			recipient: ''
+		}
 	}
 
-	onDrop(acceptedFiles) {
-		this.setState({
-        	files: acceptedFiles,
-        	test: 'fixed'
-      	});
-    }
+	componentDidMount() {
+		return upload().then(function(response) {
+		    console.log(response);
+		})
+	}
+
+	handleSubmit(e) {
+		let formData = {
+			recipient: this.state.recipient
+		}
+
+		console.log(formData);
+	}
+
+	handleRecipient(e) {
+		this.setState({ 
+			recipient: e.target.value
+		});
+	}
 
     render() {
 
@@ -26,15 +38,9 @@ class Upload extends Component {
         return (
             <section>
             	<h1>Upload View</h1>
-            	<Dropzone onDrop={this.onDrop} multiple={false}>
-              		<div>Try dropping some files here, or click to select files to upload.</div>
-	            </Dropzone>
-	            <div>
-	            	{this.state.files.map((file, index) => {
-	            	    return (
-	            	        <img src={file.preview} alt="asd" />
-	            	    );
-	            	})}
+            	<div>
+            		<input type="text" value={this.state.recipient || ''} onChange={this.handleRecipient.bind(this)} />
+            		<button onClick={(e) => this.handleSubmit()}>Submit</button>
             	</div>
             </section>
         );

@@ -19,7 +19,7 @@ class Card extends Component {
             <div className={card.card}>
                 <div className={card.cardImage}>
                     <figure className="image is-4by3">
-                        <img src={this.props.data.url} alt="" />
+                        <img className={card.cardSource} src={this.props.data.url} alt="" />
                     </figure>
                 </div>
                 <div className={card.cardContent}>

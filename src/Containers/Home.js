@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import Navigation from '../Components/navigation/navigation'
 import Card from '../Components/card/Card';
 
+// Css
+import App from '../css/app.css';
+
 const mapState = state => ({
     data: state.test.data
 });
@@ -34,15 +37,26 @@ class Home extends Component {
         return (
             <div>
                 <Navigation title="Home" />
-                <div className="section">
-                    <div className="container">
-                        {this.state.collection.map((card, index) => {
-                            return (
-                                <Link key={index} to={{ pathname: `/create/${card.id}`}}>
-                                    <Card data={card} />
-                                </Link>
-                            );
-                        })}
+                <div className={App.section}>
+                    <div className={App.container}>
+                        {(() => {
+                            // @NOTE We don't want to mount if there is no images in the feed
+                            if (this.state.collection.length !== 0) {
+                                return (
+                                    this.state.collection.map((card, index) => {
+                                        return (
+                                            <Link key={index} to={{ pathname: `/create/${card.id}`}}>
+                                                <Card data={card} />
+                                            </Link>
+                                        );
+                                    })
+                                )
+                            } else {
+                                return (
+                                    <h2 className={App.noImage}>Lol no images</h2>
+                                );
+                            }
+                        })()}
                     </div>
                 </div>
             </div>

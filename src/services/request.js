@@ -38,6 +38,23 @@ function get(url, options) {
         });
 }
 
+/**
+ * Get
+ * @param url
+ * @param options
+ * @returns {axios.Promise}
+ */
+function post(url, options) {
+    return axios.post(url, options)
+        .then(function(response) {
+            return response.data;
+        })
+        .catch(function(response) {
+            return handleRequestError(response);
+        });
+}
+
 module.exports = {
-    get: get
+    get: get,
+    post: post
 };

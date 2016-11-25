@@ -1,20 +1,20 @@
 var request = require('./request.js');
 
 /**
- * Get collection of images
+ * Upload a photo
  * @param options
  * @returns {axios.Promise|Promise.<T>|*}
  */
-function collection() {
+function upload() {
 
-    return request.get('http://localhost:8000/image')
+    return request.post('http://localhost:8000/upload')
         .then(function(response) {
             return {
-                collection: response
+                response: response
             };
         });
 }
 
 module.exports = {
-    collection: collection
+    upload: upload
 };

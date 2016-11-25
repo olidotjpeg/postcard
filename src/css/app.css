@@ -4,3 +4,22 @@
     align-items: center;
     flex-flow: column;
 }
+
+.section {
+	background-color: white;
+    padding: 40px 20px;
+}
+
+.container {
+	position: relative;
+	min-height: calc(100vh - 70px);
+}
+
+.noImage {
+	position: absolute;
+	margin: 0;
+	font-weight: 100;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
